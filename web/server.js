@@ -67,8 +67,6 @@ router.post('/api/getCandles', require(ROUTE('getCandles')));
 //   ws.on('message', _.noop);
 // });
 
-//app.set('port', process.env.PORT);
-
 app
   .use(cors())
   .use(serve(WEBROOT + 'vue'))
@@ -77,13 +75,10 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-//server.timeout = config.api.timeout||120000;
-//server.on('request', app.callback());
-
-
-        
-server.listen(process.env.PORT, () => {
-  const host = `${config.ui.host}:${process.env.PORT}${config.ui.path}`;
+server.timeout = config.api.timeout||120000;
+server.on('request', app.callback());
+server.listen(config.api.port, config.api.host, '::', () => {
+  const host = `${config.ui.host}:${config.ui.port}${config.ui.path}`;
 
   if(config.ui.ssl) {
     var location = `https://${host}`;
@@ -104,5 +99,3 @@ server.listen(process.env.PORT, () => {
     });
   }
 });
-
-module.exports = app;
