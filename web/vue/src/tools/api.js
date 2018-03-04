@@ -1,7 +1,7 @@
 // global window.CONFIG
 
 const config = window.CONFIG.ui;
-const endpoint = `${config.host}${config.port === 80 ? '' : `:${config.port}`}${config.path}`;
+const endpoint = `${config.host}${process.env.PORT === 80 ? '' : `:${process.env.PORT}`}${config.path}`;
 
 let basePath, restPath, wsPath;
 
