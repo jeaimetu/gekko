@@ -10,7 +10,7 @@ const opn = require('opn');
 const server = require('http').createServer();
 const router = require('koa-router')();
 const ws = require('ws');
-const app = express();
+const app = koa();
 
 const WebSocketServer = require('ws').Server;
 const wss = new WebSocketServer({ server: server });
