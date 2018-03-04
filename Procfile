@@ -1,1 +1,1 @@
-worker: node gekko
+web: node gekko --ui
