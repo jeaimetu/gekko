@@ -4,7 +4,7 @@
 // see https://github.com/askmike/gekko/blob/stable/docs/installing_gekko_on_a_server.md
 
 const CONFIG = {
-  headless: true,
+  headless: false,
   api: {
     host: '127.0.0.1',
     port: process.env.PORT || 3000,
