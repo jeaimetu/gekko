@@ -7,13 +7,13 @@ const CONFIG = {
   headless: false,
   api: {
     host: 'murmuring-dawn-73902.herokuapp.com',
-    port: 80,
+    port: 5000,
     timeout: 120000 // 2 minutes
   },
   ui: {
     ssl: false,
     host: 'murmuring-dawn-73902.herokuapp.com',
-    port: 80,
+    port: 5000,
     path: '/'
   },
   adapter: 'sqlite'
