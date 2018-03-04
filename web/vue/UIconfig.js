@@ -13,7 +13,7 @@ const CONFIG = {
   ui: {
     ssl: false,
     host: 'murmuring-dawn-73902.herokuapp.com',
-    port: 443,
+    port: 3000,
     path: '/'
   },
   adapter: 'sqlite'
