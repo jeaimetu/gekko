@@ -6,7 +6,7 @@
 const CONFIG = {
   headless: false,
   api: {
-    host: '122.35.49.170',
+    host: 'https://murmuring-dawn-73902.herokuapp.com',
     port: 3000,
     timeout: 120000 // 2 minutes
   },
