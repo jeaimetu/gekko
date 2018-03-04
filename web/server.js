@@ -67,7 +67,7 @@ router.post('/api/getCandles', require(ROUTE('getCandles')));
 //   ws.on('message', _.noop);
 // });
 
-app.set('port', process.env.PORT);
+//app.set('port', process.env.PORT);
 
 app
   .use(cors())
@@ -82,8 +82,8 @@ app
 
 
         
-server.listen(app.get('port'), () => {
-  const host = `${config.ui.host}:${app.get('port')}${config.ui.path}`;
+server.listen(process.env.PORT, () => {
+  const host = `${config.ui.host}:${process.env.PORT}${config.ui.path}`;
 
   if(config.ui.ssl) {
     var location = `https://${host}`;
