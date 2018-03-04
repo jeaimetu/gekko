@@ -6,13 +6,13 @@
 const CONFIG = {
   headless: false,
   api: {
-    host: 'murmuring-dawn-73902.herokuapp.com',
+    host: '54.243.104.138',
     port: 3000,
     timeout: 120000 // 2 minutes
   },
   ui: {
     ssl: false,
-    host: 'murmuring-dawn-73902.herokuapp.com',
+    host: '54.243.104.138',
     port: 3000,
     path: '/'
   },
