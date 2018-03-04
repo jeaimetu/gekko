@@ -10,7 +10,7 @@ const opn = require('opn');
 const server = require('http').createServer();
 const router = require('koa-router')();
 const ws = require('ws');
-const app = koa();
+const app = express();
 
 const WebSocketServer = require('ws').Server;
 const wss = new WebSocketServer({ server: server });
@@ -67,6 +67,8 @@ router.post('/api/getCandles', require(ROUTE('getCandles')));
 //   ws.on('message', _.noop);
 // });
 
+app.set('port', process.env.PORT);
+
 app
   .use(cors())
   .use(serve(WEBROOT + 'vue'))
@@ -78,7 +80,7 @@ app
 //server.timeout = config.api.timeout||120000;
 //server.on('request', app.callback());
 
-app.set('port', process.env.PORT);
+
         
 server.listen(app.get('port'), () => {
   const host = `${config.ui.host}:${app.get('port')}${config.ui.path}`;
