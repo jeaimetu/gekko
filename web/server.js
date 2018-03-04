@@ -77,8 +77,11 @@ app
 
 //server.timeout = config.api.timeout||120000;
 //server.on('request', app.callback());
-server.listen(config.api.port, () => {
-  const host = `${config.ui.host}:${config.ui.port}${config.ui.path}`;
+
+app.set('port', process.env.PORT);
+        
+server.listen(app.get('port'), () => {
+  const host = `${config.ui.host}:${app.get('port')}${config.ui.path}`;
 
   if(config.ui.ssl) {
     var location = `https://${host}`;
