@@ -24,9 +24,11 @@ your network connection.
 export default {
   computed: {
     active: function() {
+    log.debug(this.$store.state.warnings.connected);
       return !this.$store.state.warnings.connected;
     },
     content: function() {
+    log.debug(this.$store.state.warnings.connected);
       if(!this.$store.state.warnings.connected)
         return messages.disconnected;
       return '';
