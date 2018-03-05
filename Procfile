@@ -1,2 +1,2 @@
 web: node gekko --ui
-worker: node gekko.js --config config.js"
+worker: node ./gekko --config config.js --ui
