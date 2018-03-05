@@ -6,7 +6,7 @@
 const CONFIG = {
   headless:true,
   api: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 3000,
   },
   ui: {
