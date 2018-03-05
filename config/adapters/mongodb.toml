@@ -1,4 +1,4 @@
-connectionString = "mongodb://mongodb/gekko"
+connectionString = MONGODB_URI
 path = "plugins/mongodb"
 version = 0.1
 
