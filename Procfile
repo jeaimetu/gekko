@@ -1,2 +1,2 @@
-web: node gekko --ui
+worker: node gekko --ui
 web: node ./web/server
