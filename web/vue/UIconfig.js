@@ -10,7 +10,7 @@ const CONFIG = {
     port: 3000,
   },
   ui: {
-    ssl: false,
+    ssl: true,
     host: 'murmuring-dawn-73902.herokuapp.com',
     port: 3000,
     path: '/'
