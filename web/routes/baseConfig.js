@@ -63,7 +63,7 @@ config.postgresql = {
 config.mongodb = {
   path: 'plugins/mongodb',
   version: 0.1,
-  connectionString: MONGODB_URI, // connection to mongodb server
+  connectionString: process.env.MONGODB_URI, // connection to mongodb server
   dependencies: [{
     module: 'mongojs',
     version: '2.4.0'
