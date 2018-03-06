@@ -47,12 +47,15 @@ var pipeline = (settings) => {
   // Instantiate each enabled plugin
   var loadPlugins = function(next) {
     // load all plugins
+    console.log('async loading for plugins');
     async.mapSeries(
       pluginParameters,
       pluginHelper.load,
       function(error, _plugins) {
-        if(error)
+        if(error){
+          console.log('error occured on loadPlugins');
           return util.die(error, true);
+        }
 
         plugins = _.compact(_plugins);
         next();
