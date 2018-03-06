@@ -421,7 +421,7 @@ config.postgresql = {
 config.mongodb = {
   path: 'plugins/mongodb',
   version: 0.1,
-  connectionString: '', // connection to mongodb server
+  connectionString: 'mongodb://ds155268.mlab.com:55268/heroku_b160xqrm', // connection to mongodb server
   dependencies: [{
     module: 'mongojs',
     version: '2.4.0'
