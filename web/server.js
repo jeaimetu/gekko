@@ -63,7 +63,7 @@ router.post('/api/killGekko', require(ROUTE('killGekko')));
 router.post('/api/getCandles', require(ROUTE('getCandles')));
 
 
- incoming WS:
+ //incoming WS:
  wss.on('connection', ws => {
    ws.on('message', _.noop);
  });
