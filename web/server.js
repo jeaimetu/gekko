@@ -63,10 +63,10 @@ router.post('/api/killGekko', require(ROUTE('killGekko')));
 router.post('/api/getCandles', require(ROUTE('getCandles')));
 
 
-// incoming WS:
-// wss.on('connection', ws => {
-//   ws.on('message', _.noop);
-// });
+ incoming WS:
+ wss.on('connection', ws => {
+   ws.on('message', _.noop);
+ });
 
 app
   .use(cors())
