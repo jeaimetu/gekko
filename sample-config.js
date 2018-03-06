@@ -391,8 +391,8 @@ config.adviceWriter = {
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//config.adapter = 'sqlite';
-config.adapter = 'mongodb';
+config.adapter = 'sqlite';
+//config.adapter = 'mongodb';
 
 config.sqlite = {
   path: 'plugins/sqlite',
