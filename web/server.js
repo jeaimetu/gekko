@@ -82,7 +82,7 @@ server.on('request', app.callback());
 server.listen(process.env.PORT, () => {
   const host = `${config.api.host}:${process.env.PORT}${config.ui.path}`;
   //const host = `${process.env.DOMAIN}${config.ui.path}`;
-  consol.log('process env',process.env);
+  console.log('process env',process.env);
 
   if(config.ui.ssl) {
     var location = `https://${host}`;
