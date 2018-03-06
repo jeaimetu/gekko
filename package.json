@@ -18,6 +18,7 @@
     "@slack/client": "^3.10.0",
     "async": "2.1.2",
     "mongodb": "^3.0.1",
+    "mongojs": "lastest",
     "binance": "^1.3.0",
     "bitcoin-co-id": "0.0.1",
     "bitexthai": "^0.1.0",
