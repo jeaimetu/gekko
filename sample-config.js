@@ -35,7 +35,7 @@ config.tradingAdvisor = {
   method: 'MACD',
   candleSize: 1,
   historySize: 3,
-  adapter: 'sqlite'
+  adapter: 'mongodb'
 }
 
 // Exponential Moving Averages settings:
@@ -391,8 +391,8 @@ config.adviceWriter = {
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.adapter = 'sqlite';
-//config.adapter = 'mongodb';
+//config.adapter = 'sqlite';
+config.adapter = 'mongodb';
 
 config.sqlite = {
   path: 'plugins/sqlite',
