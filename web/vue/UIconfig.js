@@ -6,7 +6,7 @@
 const CONFIG = {
   headless:true,
   api: {
-    host: 'localhost',
+    host: 'murmuring-dawn-73902.herokuapp.com',
     port: 3001,
   },
   ui: {
