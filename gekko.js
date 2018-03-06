@@ -52,8 +52,8 @@ const pipeline = require(dirs.core + 'pipeline');
 const config = util.getConfig();
 const mode = util.gekkoMode();
 
-console.log('gekko config ' + config);
-console.log('gekko mode ' + mode);
+console.log('gekko config', config);
+console.log('gekko mode', mode);
 
 if(
   config.trader.enabled &&
