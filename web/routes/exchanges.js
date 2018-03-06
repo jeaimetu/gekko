@@ -35,5 +35,7 @@ module.exports = function *() {
     allCapabilities.push(Trader.getCapabilities());
   });
 
+  //tykim : add exchange list print statement
+  console.log('exchange list', allCapabilities);
   this.body = allCapabilities;
 }
