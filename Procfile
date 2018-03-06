@@ -1,3 +1,2 @@
-worker: node gekko --config sample-config.js
-worker: node gekko --ui
+worker: node gekko --ui --config sample-config.js
 web: node ./web/server
