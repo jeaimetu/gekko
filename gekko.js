@@ -32,7 +32,7 @@ console.log(`
    $$$$$$/  $$$$$$$$/ $$/   $$/ $$/   $$/  $$$$$$/
 `);
 
-console.log('Teddy's modified version');
+console.log('Teddy modified version');
 
 const util = require(__dirname + '/core/util');
 
