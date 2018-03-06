@@ -4,15 +4,15 @@
 // see https://github.com/askmike/gekko/blob/stable/docs/installing_gekko_on_a_server.md
 
 const CONFIG = {
-  headless:false,
+  headless:true,
   api: {
     host: 'murmuring-dawn-73902.herokuapp.com',
-    port: 3000,
+    port: 443,
   },
   ui: {
     ssl: true,
     host: 'murmuring-dawn-73902.herokuapp.com',
-    port: 3000,
+    port: 443,
     path: '/'
   },
   adapter: 'mongodb'
