@@ -32,6 +32,8 @@ console.log(`
    $$$$$$/  $$$$$$$$/ $$/   $$/ $$/   $$/  $$$$$$/
 `);
 
+console.log('Teddy's modified version');
+
 const util = require(__dirname + '/core/util');
 
 console.log('\tGekko v' + util.getVersion());
