@@ -58,6 +58,7 @@ router.post('/api/scansets', require(ROUTE('scanDatasets')));
 router.post('/api/backtest', require(ROUTE('backtest')));
 router.post('/api/import', require(ROUTE('import')));
 router.post('/api/startGekko', require(ROUTE('startGekko')));
+console.log('statingGekko');
 router.post('/api/killGekko', require(ROUTE('killGekko')));
 router.post('/api/getCandles', require(ROUTE('getCandles')));
 
