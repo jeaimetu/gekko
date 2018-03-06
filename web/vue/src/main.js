@@ -40,6 +40,7 @@ const router = new VueRouter({
 
 // setup some stuff
 connectWS();
+console.log('calling connectWS on main.js');
 
 new Vue({
   router,
