@@ -24,17 +24,20 @@ const info = {
 
 
 export const connect = () => {
+  console.log('calling ReconnectingWebSocket');
   socket = new ReconnectingWebSocket(wsPath);
 
   setTimeout(() => {
     // in case we cannot connect
     if(!info.connected) {
       initializeState();
+      console.log("init the state",info.connected,info);
       bus.$emit('WS_STATUS_CHANGE', info);
     }
   }, 500);
 
   socket.onopen = () => {
+    console.log('onopen called');
     if(info.connected)
       return;
 
@@ -43,6 +46,7 @@ export const connect = () => {
     initializeState();
   }
   socket.onclose = () => {
+    console.log('onclose called');
     if(!info.connected)
       return;
 
@@ -50,10 +54,12 @@ export const connect = () => {
     bus.$emit('WS_STATUS_CHANGE', info);
   }
   socket.onerror = () => {
+    console.log('onerror called');
     if(!info.connected)
       return;
 
     info.connected = false;
+    console.log('onerror cahnge connection status', info.connected);
     bus.$emit('WS_STATUS_CHANGE', info);
   }
   socket.onmessage = function(message) {
