@@ -41,12 +41,19 @@ console.log('\tI\'m gonna make you rich, Bud Fox.', '\n\n');
 
 const dirs = util.dirs();
 
+console.log(util.laungUI());
+
 if(util.launchUI())
   return require(util.dirs().web + 'server');
+
+console.log('successful launching');
 
 const pipeline = require(dirs.core + 'pipeline');
 const config = util.getConfig();
 const mode = util.gekkoMode();
+
+console.log('gekko config ' + config);
+console.log('gekko mode ' + mode);
 
 if(
   config.trader.enabled &&
