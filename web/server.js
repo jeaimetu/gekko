@@ -80,7 +80,7 @@ server.timeout = config.api.timeout||120000;
 server.on('request', app.callback());
 server.listen(config.api.port, config.api.host, '::', () => {
 //server.listen(process.env.PORT, () => {
-  const host = `${config.api.host}:${process.env.PORT}${config.ui.path}`;
+  const host = `${config.ui.host}:${process.env.PORT}${config.ui.path}`;
   //const host = `${process.env.DOMAIN}${config.ui.path}`;
   console.log('process env',process.env);
 
