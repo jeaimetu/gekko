@@ -26,6 +26,7 @@ module.exports = function *() {
       Trader = require(gekkoRoot + 'exchanges/' + exchange);
       console.log('Trader testing',exchange);
     } catch (e) {
+      console.log('Trader error',exchange,e);
       return;
     }
 
