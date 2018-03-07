@@ -17,10 +17,10 @@ config.tradingAdvisor = {
 }
 
 config.candleWriter = {
-  enabled: false
+  enabled: true
 }
 config.adviceWriter = {
-  enabled: false,
+  enabled: true,
   muteSoft: true,
 }
 
