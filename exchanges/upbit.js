@@ -1,4 +1,4 @@
-var Poloniex = require("poloniex.js");
+var Upbit = require("upbit.js");
 var util = require('../core/util.js');
 var _ = require('lodash');
 var moment = require('moment');
@@ -23,7 +23,7 @@ var Trader = function(config) {
 
   this.pair = [this.currency, this.asset].join('_');
 
-  this.poloniex = new Poloniex(this.key, this.secret);
+  this.upbit = new Upbit(this.key, this.secret);
 }
 
 // if the exchange errors we try the same call again after
@@ -76,12 +76,12 @@ Trader.prototype.getPortfolio = function(callback) {
     callback(err, portfolio);
   }.bind(this);
 
-  this.poloniex.myBalances(set);
+  this.upbit.myBalances(set);
 }
 
 Trader.prototype.getTicker = function(callback) {
   var args = _.toArray(arguments);
-  this.poloniex.getTicker(function(err, data) {
+  this.upbit.getTicker(function(err, data) {
     if(err)
       return this.retry(this.getTicker, args);
 
@@ -102,7 +102,7 @@ Trader.prototype.getFee = function(callback) {
 
     callback(false, parseFloat(data.makerFee));
   }
-  this.poloniex._private('returnFeeInfo', _.bind(set, this));
+  this.upbit._private('returnFeeInfo', _.bind(set, this));
 }
 
 Trader.prototype.buy = function(amount, price, callback) {
@@ -116,7 +116,7 @@ Trader.prototype.buy = function(amount, price, callback) {
     callback(null, result.orderNumber);
   }.bind(this);
 
-  this.poloniex.buy(this.currency, this.asset, price, amount, set);
+  this.upbit.buy(this.currency, this.asset, price, amount, set);
 }
 
 Trader.prototype.sell = function(amount, price, callback) {
@@ -130,7 +130,7 @@ Trader.prototype.sell = function(amount, price, callback) {
     callback(null, result.orderNumber);
   }.bind(this);
 
-  this.poloniex.sell(this.currency, this.asset, price, amount, set);
+  this.upbit.sell(this.currency, this.asset, price, amount, set);
 }
 
 Trader.prototype.checkOrder = function(order, callback) {
@@ -139,7 +139,7 @@ Trader.prototype.checkOrder = function(order, callback) {
     callback(err, !stillThere);
   }.bind(this);
 
-  this.poloniex.myOpenOrders(this.currency, this.asset, check);
+  this.upbit.myOpenOrders(this.currency, this.asset, check);
 }
 
 Trader.prototype.getOrder = function(order, callback) {
@@ -167,7 +167,7 @@ Trader.prototype.getOrder = function(order, callback) {
     callback(err, {price, amount, date});
   }.bind(this);
 
-  this.poloniex.returnOrderTrades(order, get);
+  this.upbit.returnOrderTrades(order, get);
 }
 
 Trader.prototype.cancelOrder = function(order, callback) {
@@ -186,7 +186,7 @@ Trader.prototype.cancelOrder = function(order, callback) {
     callback();
   }.bind(this);
 
-  this.poloniex.cancelOrder(this.currency, this.asset, order, cancel);
+  this.upbit.cancelOrder(this.currency, this.asset, order, cancel);
 }
 
 Trader.prototype.getTrades = function(since, callback, descending) {
@@ -204,7 +204,7 @@ Trader.prototype.getTrades = function(since, callback, descending) {
     if(firstFetch && _.size(result) === 50000)
       util.die(
         [
-          'Poloniex did not provide enough data. Read this:',
+          'upbit did not provide enough data. Read this:',
           'https://github.com/askmike/gekko/issues/479'
         ].join('\n\n')
       );
@@ -228,13 +228,13 @@ Trader.prototype.getTrades = function(since, callback, descending) {
   if(since)
     params.start = since.unix();
 
-  this.poloniex._public('returnTradeHistory', params, _.bind(process, this));
+  this.upbit._public('returnTradeHistory', params, _.bind(process, this));
 }
 
 Trader.getCapabilities = function () {
   return {
-    name: 'Poloniex',
-    slug: 'poloniex',
+    name: 'Upbit',
+    slug: 'upbit',
     currencies: ['BTC', 'ETH', 'XMR', 'USDT'],
     assets: [
       '1CR', 'ABY', 'AC', 'ACH', 'ADN', 'AEON', 'AERO', 'AIR', 'AMP', 'APH',
