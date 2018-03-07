@@ -1,4 +1,4 @@
-connectionString = MONGODB_URI
+connectionString = process.env.MONGODB_URI
 path = "plugins/mongodb"
 version = 0.1
 
