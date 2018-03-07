@@ -35,7 +35,7 @@ config.tradingAdvisor = {
   method: 'MACD',
   candleSize: 1,
   historySize: 3,
-  adapter: 'sqlite'
+  adapter: 'mongodb'
 }
 
 // Exponential Moving Averages settings:
@@ -390,7 +390,7 @@ config.adviceWriter = {
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.adapter = 'sqlite';
+config.adapter = 'mongodb';
 
 config.sqlite = {
   path: 'plugins/sqlite',
@@ -420,7 +420,7 @@ config.postgresql = {
 config.mongodb = {
   path: 'plugins/mongodb',
   version: 0.1,
-  connectionString: 'mongodb://mongodb/gekko', // connection to mongodb server
+  connectionString: process.env.MONGODB_URI, // connection to mongodb server
   dependencies: [{
     module: 'mongojs',
     version: '2.4.0'
