@@ -62,6 +62,7 @@
     "toml": "^2.3.0",
     "twitter": "^1.7.1",
     "zaif.jp": "^0.1.4"
+    "upbit": "^0.0.7";
   },
   "devDependencies": {
     "chai": "^2.0.0",
