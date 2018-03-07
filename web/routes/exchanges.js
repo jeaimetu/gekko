@@ -24,6 +24,7 @@ module.exports = function *() {
 
     try {
       Trader = require(gekkoRoot + 'exchanges/' + exchange);
+      console.log('Trader testing',exchange);
     } catch (e) {
       return;
     }
@@ -35,7 +36,8 @@ module.exports = function *() {
     allCapabilities.push(Trader.getCapabilities());
   });
 
+  //Too much print, so comment out this
   //tykim : add exchange list print statement
-  console.log('exchange list', allCapabilities);
+  //console.log('exchange list', allCapabilities);
   this.body = allCapabilities;
 }
