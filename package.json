@@ -61,8 +61,8 @@
     "tiny-promisify": "^0.1.1",
     "toml": "^2.3.0",
     "twitter": "^1.7.1",
-    "zaif.jp": "^0.1.4"
-    "korbit-node": "^0.0.2";
+    "zaif.jp": "^0.1.4",
+    "korbit-node": "^0.0.2"
   },
   "devDependencies": {
     "chai": "^2.0.0",
