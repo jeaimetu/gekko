@@ -2,6 +2,8 @@
 
 var start = (config, candleSize, daterange) => {
   console.log('child start',__filename,candleSize, daterange, config);
+  //candleSize = 10;
+  
   var util = require(__dirname + '/../../util');
 
   // force correct gekko env
@@ -24,7 +26,7 @@ process.send('ready');
 
 process.on('message', (m) => {
   if(m.what === 'start'){
-    console.log('starting on process',__filename);
+    console.log('starting on process',__filename,m.candleSize, m.daterange);
     start(m.config, m.candleSize, m.daterange);
   }
 });
