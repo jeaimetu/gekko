@@ -4,7 +4,7 @@
 // see https://github.com/askmike/gekko/blob/stable/docs/installing_gekko_on_a_server.md
 
 const CONFIG = {
-  headless: true,
+  headless: false,
   api: {
     host: 'murmuring-dawn-73902.herokuapp.com',
     port: 443,
