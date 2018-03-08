@@ -1,6 +1,7 @@
 
-console.log('child start',__filename,candleSize, daterange, config);
+
 var start = (config, candleSize, daterange) => {
+  console.log('child start',__filename,candleSize, daterange, config);
   var util = require(__dirname + '/../../util');
 
   // force correct gekko env
