@@ -10,8 +10,8 @@
      from: '2016-05-22 11:22',
      to: '2016-06-03 19:56'
    },
-   adapter = 'mongodb',
-  mongodb = {
+   adapter: 'mongodb',
+  mongodb: {
   path: 'plugins/mongodb',
   version: 0.1,
   connectionString: process.env.MONGODB_URI, // connection to mongodb server
@@ -22,6 +22,19 @@
 },
    candleSize: 100
  }
+ 
+ //   adapter: 'sqlite',
+//   sqlite: {
+//     path: 'plugins/sqlite',
+
+//     dataDirectory: 'history',
+//     version: 0.1,
+
+//     dependencies: [{
+//       module: 'sqlite3',
+//       version: '3.1.4'
+//     }]
+//   },
 
 // module.exports(config, function(err, data) {
 //   console.log('FINAL CALLBACK');
