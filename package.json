@@ -44,7 +44,7 @@
     "lakebtc_nodejs": "0.1.x",
     "lodash": "2.x",
     "moment": "2.19.3",
-    "mongojs": "^2.4.0",
+    "mongojs": "^2.5.0",
     "mongodb": "^3.0.4",
     "node-wex": "^1.0.3",
     "node.bittrex.api": "^0.4.3",
