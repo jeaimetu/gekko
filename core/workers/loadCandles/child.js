@@ -1,3 +1,5 @@
+
+console.log('child start',__filename,candleSize, daterange, config);
 var start = (config, candleSize, daterange) => {
   var util = require(__dirname + '/../../util');
 
@@ -16,9 +18,12 @@ var start = (config, candleSize, daterange) => {
   })
 }
 
+console.log('process send ready', __filename);
 process.send('ready');
 
 process.on('message', (m) => {
-  if(m.what === 'start')
+  if(m.what === 'start'){
+    console.log('starting on process',__filename);
     start(m.config, m.candleSize, m.daterange);
+  }
 });
