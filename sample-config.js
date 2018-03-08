@@ -19,6 +19,7 @@ config.watch = {
   exchange: 'poloniex',
   currency: 'USDT',
   asset: 'BTC',
+  adapter: 'mongodb'
 
   // You can set your own tickrate (refresh rate).
   // If you don't set it, the defaults are 2 sec for
