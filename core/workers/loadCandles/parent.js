@@ -10,7 +10,8 @@
      from: '2016-05-22 11:22',
      to: '2016-06-03 19:56'
    },
-config.mongodb = {
+   adapter = 'mongodb',
+  mongodb = {
   path: 'plugins/mongodb',
   version: 0.1,
   connectionString: process.env.MONGODB_URI, // connection to mongodb server
