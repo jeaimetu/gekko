@@ -26,6 +26,11 @@ process.send('ready');
 
 process.on('message', (m) => {
   if(m.what === 'start'){
+    //tykim
+    m.candleSize = 10;
+    m.from = '2018-03-08T05:22:00Z';
+    m.to = '2018-03-08T05:24:00Z';
+    //tykim
     console.log('starting on process',__filename,m.candleSize, m.daterange);
     start(m.config, m.candleSize, m.daterange);
   }
