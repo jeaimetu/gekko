@@ -42,6 +42,8 @@ module.exports = (config, callback) => {
   }
 
   const child = fork(__dirname + '/child');
+  
+  console.log('child information',__dirname,__filename, child)
 
   const message = {
     what: 'start',
@@ -51,9 +53,10 @@ module.exports = (config, callback) => {
   const done = _.once(callback);
 
   child.on('message', function(m) {
-    if(m === 'ready')
+    if(m === 'ready'){
+      console.log("status ready", __dirname,__filename);
       return child.send(message);
-
+    }
     // else we are done and have candles!
     done(null, m);
     child.kill('SIGINT');
