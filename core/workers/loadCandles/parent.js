@@ -1,29 +1,26 @@
 // example usage:
 
-// let config = {
-//   watch: {
-//     exchange: 'poloniex',
-//     currency: 'USDT',
-//     asset: 'BTC'
-//   },
-//   daterange: {
-//     from: '2016-05-22 11:22',
-//     to: '2016-06-03 19:56'
-//   },
-//   adapter: 'sqlite',
-//   sqlite: {
-//     path: 'plugins/sqlite',
-
-//     dataDirectory: 'history',
-//     version: 0.1,
-
-//     dependencies: [{
-//       module: 'sqlite3',
-//       version: '3.1.4'
-//     }]
-//   },
-//   candleSize: 100
-// }
+ let config = {
+   watch: {
+     exchange: 'poloniex',
+     currency: 'USDT',
+     asset: 'BTC'
+   },
+   daterange: {
+     from: '2016-05-22 11:22',
+     to: '2016-06-03 19:56'
+   },
+config.mongodb = {
+  path: 'plugins/mongodb',
+  version: 0.1,
+  connectionString: process.env.MONGODB_URI, // connection to mongodb server
+  dependencies: [{
+    module: 'mongojs',
+    version: '2.5.0'
+  }]
+},
+   candleSize: 100
+ }
 
 // module.exports(config, function(err, data) {
 //   console.log('FINAL CALLBACK');
