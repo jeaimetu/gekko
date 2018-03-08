@@ -2,12 +2,7 @@
 
 var start = (config, candleSize, daterange) => {
   console.log('child start',__filename,candleSize, daterange, config);
-      //tykim
-    candleSize = 10;
-    daterange.from = '2018-03-08T05:22:00Z';
-    daterange.to = '2018-03-08T05:24:00Z';
-    //tykim
-  
+
   var util = require(__dirname + '/../../util');
 
   // force correct gekko env
