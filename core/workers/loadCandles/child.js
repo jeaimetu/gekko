@@ -2,7 +2,11 @@
 
 var start = (config, candleSize, daterange) => {
   console.log('child start',__filename,candleSize, daterange, config);
-  //candleSize = 10;
+      //tykim
+    candleSize = 10;
+    daterange.from = '2018-03-08T05:22:00Z';
+    daterange.to = '2018-03-08T05:24:00Z';
+    //tykim
   
   var util = require(__dirname + '/../../util');
 
@@ -25,12 +29,11 @@ console.log('process send ready', __filename);
 process.send('ready');
 
 process.on('message', (m) => {
+  //tykim
+  console.log('after calling process on message',m);
+  //tykim
   if(m.what === 'start'){
-    //tykim
-    m.candleSize = 10;
-    m.daterange.from = '2018-03-08T05:22:00Z';
-    m.daterange.to = '2018-03-08T05:24:00Z';
-    //tykim
+
     console.log('starting on process',__filename,m.candleSize, m.daterange);
     start(m.config, m.candleSize, m.daterange);
   }
