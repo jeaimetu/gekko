@@ -37,6 +37,6 @@ module.exports = function *() {
   config = {};
   _.merge(config, base, this.request.body);
   //tykim
-  console.log('getCandles',config);
+  //console.log('getCandles',config);
   this.body = yield candleLoader(config);
 }
