@@ -424,7 +424,7 @@ config.mongodb = {
   connectionString: process.env.MONGODB_URI, // connection to mongodb server
   dependencies: [{
     module: 'mongojs',
-    version: '2.4.0'
+    version: '2.5.0'
   }]
 }
 
