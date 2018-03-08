@@ -451,6 +451,8 @@ config.importer = {
   }
 }
 
+config.candleSize = 10;
+
 // set this to true if you understand that Gekko will
 // invest according to how you configured the indicators.
 // None of the advice in the output is Gekko telling you
